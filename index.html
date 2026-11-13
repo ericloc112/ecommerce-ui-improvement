@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đi Chung Xe (DCX) — Cộng đồng Leo núi, Trekking & Outdoor mỗi tuần</title>
+    <!-- Font chữ hiện đại cho tiếng Việt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Liên kết file CSS tách riêng -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP BAR THÔNG BÁO -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <span>🌲 Lịch trình cuối tuần đã mở cổng đăng ký — Giảm 10% cho nhóm từ 3 thành viên!</span>
+            <div class="top-bar-links">
+                <a href="tel:0902223080">Hotline/Zalo: 0902 223 080</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER CHÍNH -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">⛰️</span>
+                <div class="logo-text">
+                    <strong>ĐiChung<span>Xe</span></strong>
+                    <small>LEO NÚI MỖI TUẦN</small>
+                </div>
+            </a>
+
+            <nav class="main-nav" aria-label="Menu chính">
+                <ul>
+                    <li><a href="#lich-trinh" class="active">Lịch trình</a></li>
+                    <li><a href="#hoat-dong">Hoạt động</a></li>
+                    <li><a href="#quy-trinh">Cách tham gia</a></li>
+                    <li><a href="#cam-nhan">Cộng đồng</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#dang-nhap" class="btn btn-ghost">Đăng nhập</a>
+                <a href="#gio-hang" class="btn btn-primary">
+                    <span>Chuyến đã chọn</span>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION HIỆN ĐẠI VỚI ẢNH NỀN & GLASSMORPHISM SEARCH -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-badge">✨ Cộng đồng Outdoor & Trekking năng động nhất</div>
+                <h1>Về thiên nhiên — Và về lại chính mình</h1>
+                <p>Kết nối những người yêu vận động qua các chuyến leo núi, trekking, chạy trail và cắm trại cuối tuần. Đi chung xe, tối ưu chi phí, an toàn trọn gói.</p>
+
+                <!-- Thanh tìm kiếm & lọc hành trình -->
+                <form class="search-widget" action="#lich-trinh">
+                    <div class="search-field">
+                        <label for="location">Cung đường / Điểm đến</label>
+                        <input type="text" id="location" placeholder="VD: Tà Năng, Langbiang, Cát Tiên..." required>
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-field">
+                        <label for="depart-date">Ngày khởi hành</label>
+                        <input type="date" id="depart-date">
+                    </div>
+                    <div class="search-divider"></div>
+                    <div class="search-field">
+                        <label for="difficulty">Cấp độ thể lực</label>
+                        <select id="difficulty">
+                            <option value="all">Tất cả cấp độ</option>
+                            <option value="easy">Cơ bản (Người mới bắt đầu)</option>
+                            <option value="medium">Trung bình (Có kinh nghiệm)</option>
+                            <option value="hard">Thử thách (Chuyên sâu)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-accent btn-search">
+                        Tìm hành trình
+                    </button>
+                </form>
+
+                <!-- Chỉ số niềm tin (Social Proof) -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>250+</strong>
+                        <span>Chuyến đi thành công</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>4.800+</strong>
+                        <span>Thành viên đồng hành</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>100%</strong>
+                        <span>Bảo hiểm & Leader dẫn đoàn</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC HOẠT ĐỘNG NHANH (QUICK CATEGORIES) -->
+        <section id="hoat-dong" class="categories-section">
+            <div class="container">
+                <div class="category-grid">
+                    <a href="#lich-trinh" class="category-card">
+                        <span class="cat-icon">🥾</span>
+                        <h3>Trekking Rừng</h3>
+                        <p>Khám phá hệ sinh thái</p>
+                    </a>
+                    <a href="#lich-trinh" class="category-card">
+                        <span class="cat-icon">🏔️</span>
+                        <h3>Chinh Phục Đỉnh</h3>
+                        <p>Săn mây & đón bình minh</p>
+                    </a>
+                    <a href="#lich-trinh" class="category-card">
+                        <span class="cat-icon">⛺</span>
+                        <h3>Camping Glamping</h3>
+                        <p>Cắm trại qua đêm chill</p>
+                    </a>
+                    <a href="#lich-trinh" class="category-card">
+                        <span class="cat-icon">🏃</span>
+                        <h3>Trail Running</h3>
+                        <p>Chạy địa hình nâng cao</p>
+                    </a>
+                    <a href="#lich-trinh" class="category-card">
+                        <span class="cat-icon">🚴</span>
+                        <h3>Đạp Xe Địa Hình</h3>
+                        <p>Cung đường ven biển & đồi</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH SÁCH CHUYẾN ĐI / SẢN PHẨM CHÍNH -->
+        <section id="lich-trinh" class="trips-section">
+            <div class="container">
+                <div class="section-top">
+                    <div>
+                        <span class="section-tag">LỊCH KHỞI HÀNH MỚI NHẤT</span>
+                        <h2>Các chuyến đi nổi bật tuần này</h2>
+                    </div>
+                    <div class="filter-pills">
+                        <button type="button" class="pill active">Tất cả</button>
+                        <button type="button" class="pill">Đi về trong ngày</button>
+                        <button type="button" class="pill">2 Ngày 1 Đêm</button>
+                        <button type="button" class="pill">Còn ít chỗ</button>
+                    </div>
+                </div>
+
+                <!-- Lưới 4 sản phẩm (Chuyến đi) -->
+                <div class="trips-grid">
+                    
+                    <!-- Chuyến đi 1 -->
+                    <article class="trip-card">
+                        <div class="trip-media">
+                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=700&q=80" alt="Leo núi Tà Cú - Biển Kê Gà" loading="lazy">
+                            <div class="trip-badges">
+                                <span class="badge badge-green">Cuối tuần này</span>
+                                <span class="badge badge-dark">Còn 4 chỗ</span>
+                            </div>
+                        </div>
+                        <div class="trip-content">
+                            <div class="trip-meta">
+                                <span>⏱️ 1 Ngày</span>
+                                <span>•</span>
+                                <span class="level-easy">⚡ Cơ bản</span>
+                            </div>
+                            <h3 class="trip-title">Leo núi Tà Cú – Tắm biển Mũi Kê Gà</h3>
+                            <p class="trip-desc">Khởi hành từ TP.HCM. Chinh phục đỉnh núi Tà Cú bằng đường mòn rừng và thư giãn bên hải đăng Kê Gà.</p>
+                            <ul class="trip-includes">
+                                <li>✓ Xe đưa đón 16 chỗ đời mới</li>
+                                <li>✓ Ăn trưa hải sản & bảo hiểm</li>
+                            </ul>
+                            <div class="trip-footer">
+                                <div class="trip-price">
+                                    <span class="old-price">850.000đ</span>
+                                    <div class="new-price">680.000đ<span>/khách</span></div>
+                                </div>
+                                <button type="button" class="btn btn-accent">Đặt chỗ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chuyến đi 2 -->
+                    <article class="trip-card">
+                        <div class="trip-media">
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80" alt="Săn mây đỉnh Langbiang" loading="lazy">
+                            <div class="trip-badges">
+                                <span class="badge badge-orange">Bán chạy nhất</span>
+                                <span class="badge badge-dark">Còn 2 chỗ</span>
+                            </div>
+                        </div>
+                        <div class="trip-content">
+                            <div class="trip-meta">
+                                <span>⏱️ 2 Ngày 2 Đêm</span>
+                                <span>•</span>
+                                <span class="level-medium">⚡ Trung bình</span>
+                            </div>
+                            <h3 class="trip-title">Chinh phục nóc nhà Đà Lạt – Đỉnh Langbiang</h3>
+                            <p class="trip-desc">Băng qua rừng thông nguyên sinh, cắm trại BBQ giữa sương mù và đón bình minh trên độ cao 2.167m.</p>
+                            <ul class="trip-includes">
+                                <li>✓ Xe giường nằm khứ hồi</li>
+                                <li>✓ Lều trại, túi ngủ & 4 bữa ăn</li>
+                            </ul>
+                            <div class="trip-footer">
+                                <div class="trip-price">
+                                    <span class="old-price">1.850.000đ</span>
+                                    <div class="new-price">1.450.000đ<span>/khách</span></div>
+                                </div>
+                                <button type="button" class="btn btn-accent">Đặt chỗ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chuyến đi 3 -->
+                    <article class="trip-card">
+                        <div class="trip-media">
+                            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=700&q=80" alt="Trekking Vườn quốc gia Nam Cát Tiên" loading="lazy">
+                            <div class="trip-badges">
+                                <span class="badge badge-green">Gia đình & Nhóm bạn</span>
+                            </div>
+                        </div>
+                        <div class="trip-content">
+                            <div class="trip-meta">
+                                <span>⏱️ 2 Ngày 1 Đêm</span>
+                                <span>•</span>
+                                <span class="level-easy">⚡ Cơ bản</span>
+                            </div>
+                            <h3 class="trip-title">Trekking Xuyên rừng Nam Cát Tiên – Bàu Sấu</h3>
+                            <p class="trip-desc">Trải nghiệm cung đường rừng bằng phẳng, ngắm cây Tung cổ thụ 500 tuổi và chèo thuyền tại Bàu Sấu.</p>
+                            <ul class="trip-includes">
+                                <li>✓ Xe đưa đón + Vé vào cổng</li>
+                                <li>✓ Kiểm lâm & Leader dẫn đoàn</li>
+                            </ul>
+                            <div class="trip-footer">
+                                <div class="trip-price">
+                                    <span class="old-price">1.500.000đ</span>
+                                    <div class="new-price">1.200.000đ<span>/khách</span></div>
+                                </div>
+                                <button type="button" class="btn btn-accent">Đặt chỗ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Chuyến đi 4 -->
+                    <article class="trip-card">
+                        <div class="trip-media">
+                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=700&q=80" alt="Cung đường Tà Năng Phan Dũng" loading="lazy">
+                            <div class="trip-badges">
+                                <span class="badge badge-red">Thử thách</span>
+                                <span class="badge badge-dark">Còn 3 chỗ</span>
+                            </div>
+                        </div>
+                        <div class="trip-content">
+                            <div class="trip-meta">
+                                <span>⏱️ 3 Ngày 2 Đêm</span>
+                                <span>•</span>
+                                <span class="level-hard">⚡ Nâng cao</span>
+                            </div>
+                            <h3 class="trip-title">Cung đường Trekking đẹp nhất: Tà Năng – Phan Dũng</h3>
+                            <p class="trip-desc">Hành trình 35km qua những đồi cỏ cháy trập trùng nối liền hai tỉnh Lâm Đồng và Bình Thuận.</p>
+                            <ul class="trip-includes">
+                                <li>✓ Porter mang đồ chung & y tế</li>
+                                <li>✓ Huy chương hoàn thành cung</li>
+                            </ul>
+                            <div class="trip-footer">
+                                <div class="trip-price">
+                                    <span class="old-price">2.600.000đ</span>
+                                    <div class="new-price">2.200.000đ<span>/khách</span></div>
+                                </div>
+                                <button type="button" class="btn btn-accent">Đặt chỗ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- QUY TRÌNH THAM GIA 3 BƯỚC -->
+        <section id="quy-trinh" class="steps-section">
+            <div class="container">
+                <div class="section-center">
+                    <span class="section-tag">ĐƠN GIẢN & MINH BẠCH</span>
+                    <h2>Tham gia hành trình cùng DCX chỉ với 3 bước</h2>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3>Chọn cung đường phù hợp</h3>
+                        <p>Lọc chuyến đi theo thời gian rảnh và cấp độ thể lực. Xem rõ lịch trình, vật dụng cần chuẩn bị và chi phí trọn gói.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3>Đăng ký & Vào nhóm Zalo đoàn</h3>
+                        <p>Xác nhận giữ chỗ trực tuyến nhanh chóng. Trước chuyến đi 3 ngày, Leader sẽ thêm bạn vào nhóm để dặn dò chi tiết.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3>Lên xe & Khám phá thiên nhiên</h3>
+                        <p>Tập trung tại điểm đón đúng giờ, chia sẻ chi phí xe cùng đồng đội và tận hưởng chuyến đi an toàn, trọn vẹn.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER CHUYÊN NGHIỆP -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-icon">⛰️</span>
+                    <div class="logo-text">
+                        <strong>ĐiChung<span>Xe</span></strong>
+                        <small>LEO NÚI MỖI TUẦN</small>
+                    </div>
+                </a>
+                <p>Nền tảng kết nối cộng đồng du lịch trải nghiệm, leo núi và thể thao ngoài trời. Giúp mọi người dễ dàng tiếp cận thiên nhiên an toàn và tiết kiệm.</p>
+            </div>
+            <div>
+                <h4>Khám phá</h4>
+                <ul>
+                    <li><a href="#lich-trinh">Lịch trình leo núi hàng tuần</a></li>
+                    <li><a href="#hoat-dong">Tour trekking cho doanh nghiệp</a></li>
+                    <li><a href="#quy-trinh">Danh sách đồ dùng cần chuẩn bị</a></li>
+                    <li><a href="#">Kinh nghiệm cho người mới</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Chính sách & An toàn</h4>
+                <ul>
+                    <li><a href="#">Quy định bảo hiểm du lịch</a></li>
+                    <li><a href="#">Chính sách hoàn / dời lịch đi</a></li>
+                    <li><a href="#">Cam kết bảo vệ môi trường rừng</a></li>
+                    <li><a href="#">Điều khoản thành viên</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Liên hệ điều hành</h4>
+                <p>📍 Điểm đón chính: Quận 1 & TP. Thủ Đức, TP.HCM</p>
+                <p>📞 Hotline / Zalo: <strong>0902 223 080</strong></p>
+                <p>✉️ Email: chao@dichungxe.net</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Đi Chung Xe (dichungxe.net). Thiết kế giao diện chuẩn UX/UI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- THANH ĐIỀU HƯỚNG CỐ ĐỊNH DƯỚI ĐÁY CHO MOBILE (BOTTOM NAV) -->
+    <nav class="mobile-bottom-nav" aria-label="Điều hướng di động">
+        <a href="#" class="active">
+            <span>🏠</span>
+            <small>Trang chủ</small>
+        </a>
+        <a href="#lich-trinh">
+            <span>🥾</span>
+            <small>Chuyến đi</small>
+        </a>
+        <a href="#gio-hang">
+            <span>🎒</span>
+            <small>Đã chọn (0)</small>
+        </a>
+        <a href="tel:0902223080">
+            <span>💬</span>
+            <small>Tư vấn</small>
+        </a>
+    </nav>
+
+</body>
+</html>

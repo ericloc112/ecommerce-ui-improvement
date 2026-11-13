@@ -1,0 +1,827 @@
+/* ==========================================================================
+   1. DESIGN TOKENS & BIẾN HỆ THỐNG
+   ========================================================================== */
+:root {
+    --primary: #14532d;         /* Xanh rừng sâu tạo cảm giác vững chãi, tin cậy */
+    --primary-light: #166534;
+    --primary-soft: #dcfce7;
+    --accent: #ea580c;          /* Cam năng lượng cho nút CTA và giá ưu đãi */
+    --accent-hover: #c2410c;
+    --dark: #0f172a;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --bg-page: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-page);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. HỆ THỐNG NÚT BẤM (BUTTONS)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    min-height: 44px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.92rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-1px);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(234, 88, 12, 0.3);
+}
+
+.btn-ghost {
+    color: var(--text-main);
+    background: transparent;
+}
+
+.btn-ghost:hover {
+    background-color: #f1f5f9;
+}
+
+/* ==========================================================================
+   3. TOP BAR & HEADER
+   ========================================================================== */
+.top-bar {
+    background-color: var(--dark);
+    color: #cbd5e1;
+    font-size: 0.82rem;
+    padding: 8px 0;
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-links a {
+    color: #fb923c;
+    font-weight: 600;
+}
+
+.site-header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-text strong {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.logo-text strong span {
+    color: var(--accent);
+}
+
+.logo-text small {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 32px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    position: relative;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary);
+}
+
+.main-nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-badge {
+    background-color: var(--accent);
+    color: var(--white);
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 99px;
+}
+
+/* ==========================================================================
+   4. HERO BANNER & SEARCH WIDGET
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0 90px;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.72) 0%, rgba(20, 83, 45, 0.85) 100%);
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 960px;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-container h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.hero-container p {
+    font-size: 1.1rem;
+    color: #e2e8f0;
+    max-width: 700px;
+    margin: 0 auto 36px;
+}
+
+/* Khung tìm kiếm nổi bật */
+.search-widget {
+    background-color: var(--white);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-lg);
+    text-align: left;
+}
+
+.search-field {
+    flex: 1;
+    padding: 6px 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-field label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.search-field input,
+.search-field select {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    background: transparent;
+    width: 100%;
+}
+
+.search-divider {
+    width: 1px;
+    height: 36px;
+    background-color: var(--border);
+}
+
+.btn-search {
+    padding: 16px 28px;
+    border-radius: 10px;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* Chỉ số uy tín */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item strong {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fb923c;
+}
+
+.stat-item span {
+    font-size: 0.88rem;
+    color: #cbd5e1;
+}
+
+/* ==========================================================================
+   5. DANH MỤC HOẠT ĐỘNG NHANH
+   ========================================================================== */
+.categories-section {
+    margin-top: -36px;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 24px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.category-card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+.cat-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.category-card h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.category-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   6. DANH SÁCH CHUYẾN ĐI (TRIPS / PRODUCTS)
+   ========================================================================== */
+.trips-section {
+    padding: 56px 0;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.section-top h2,
+.section-center h2 {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.filter-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pill {
+    padding: 8px 16px;
+    border-radius: 99px;
+    border: 1px solid var(--border);
+    background-color: var(--white);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pill:hover,
+.pill.active {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+/* Lưới 4 thẻ sản phẩm */
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.trip-card {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.trip-media {
+    position: relative;
+    height: 195px;
+    overflow: hidden;
+}
+
+.trip-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.trip-card:hover .trip-media img {
+    transform: scale(1.06);
+}
+
+.trip-badges {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: var(--white);
+}
+
+.badge-green { background-color: var(--primary); }
+.badge-orange { background-color: var(--accent); }
+.badge-red { background-color: #dc2626; }
+.badge-dark { background-color: rgba(15, 23, 42, 0.75); backdrop-filter: blur(4px); }
+
+.trip-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.trip-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.level-easy { color: #16a34a; }
+.level-medium { color: #d97706; }
+.level-hard { color: #dc2626; }
+
+.trip-title {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.trip-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.trip-includes {
+    background-color: #f8fafc;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.trip-includes li {
+    margin-bottom: 4px;
+}
+
+.trip-includes li:last-child {
+    margin-bottom: 0;
+}
+
+.trip-footer {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.old-price {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    display: block;
+}
+
+.new-price {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.new-price span {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   7. QUY TRÌNH THAM GIA (3 STEPS)
+   ========================================================================== */
+.steps-section {
+    background-color: var(--white);
+    padding: 64px 0;
+    border-top: 1px solid var(--border);
+}
+
+.section-center {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.step-card {
+    background-color: var(--bg-page);
+    padding: 28px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--primary-soft);
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.step-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.step-card p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   8. FOOTER & MOBILE BOTTOM NAVIGATION
+   ========================================================================== */
+.site-footer {
+    background-color: var(--dark);
+    color: #94a3b8;
+    padding-top: 56px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 36px;
+    padding-bottom: 40px;
+}
+
+.footer-logo strong {
+    color: var(--white);
+}
+
+.footer-brand p {
+    margin-top: 14px;
+    font-size: 0.9rem;
+}
+
+.site-footer h4 {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.site-footer ul li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.site-footer ul a:hover {
+    color: var(--white);
+}
+
+.footer-grid p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Thanh menu đáy trên Mobile (mặc định ẩn trên Desktop) */
+.mobile-bottom-nav {
+    display: none;
+}
+
+/* ==========================================================================
+   9. RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .trips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar,
+    .main-nav,
+    .btn-ghost {
+        display: none;
+    }
+
+    .hero-section {
+        padding: 48px 0 64px;
+    }
+
+    .hero-container h1 {
+        font-size: 1.9rem;
+    }
+
+    .search-widget {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+    }
+
+    .search-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .btn-search {
+        width: 100%;
+    }
+
+    .hero-stats {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Danh mục chuyển sang vuốt ngang mượt mà trên điện thoại */
+    .categories-section {
+        margin-top: -24px;
+    }
+
+    .category-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 8px;
+        gap: 12px;
+    }
+
+    .category-card {
+        min-width: 145px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+
+    .trips-grid,
+    .steps-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Chừa khoảng trống đáy để không bị che bởi Mobile Bottom Nav */
+    body {
+        padding-bottom: 68px;
+    }
+
+    .mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background-color: var(--white);
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 200;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .mobile-bottom-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--text-muted);
+    }
+
+    .mobile-bottom-nav a span {
+        font-size: 1.25rem;
+        margin-bottom: 2px;
+    }
+
+    .mobile-bottom-nav a.active {
+        color: var(--primary);
+    }
+}
